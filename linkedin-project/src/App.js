@@ -1,17 +1,17 @@
 import React from "react";
 import "./App.css";
 import Header from "./Header";
+import Leftbar from "./Leftbar";
 
 function App() {
   return (
     <div className="app">
-      {/* Header */}
       <Header />
-
-      {/* Body */}
-      {/* Sidebar */}
-      {/* Feed */}
-      {/* Widgets */}
+      <div className="linkedin__body">
+        <Leftbar />
+        {/* Feed */}
+        {/* Widgets */}
+      </div>
     </div>
   );
 }
