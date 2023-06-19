@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Header from "./Header";
 import Leftbar from "./Leftbar";
+import Feed from "./Feed";
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       <Header />
       <div className="linkedin__body">
         <Leftbar />
-        {/* Feed */}
+        <Feed />
         {/* Widgets */}
       </div>
     </div>
