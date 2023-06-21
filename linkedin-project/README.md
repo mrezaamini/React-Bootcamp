@@ -10,7 +10,6 @@ Welcome to the LinkedIn project! This project aims to provide you with an opport
 2. [Project Structure](#project-structure)
 3. [Technologies](#technologies)
 4. [Contributing](#contributing)
-5. [License](#license)
 
 ## Getting Started
 
