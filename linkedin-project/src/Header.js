@@ -8,11 +8,12 @@ import HeaderItem from "./HeaderItem";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import ChatIcon from "@mui/icons-material/Chat";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import { useDispatch } from "react-redux";
-import { logout } from "./features/user/userSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { logout, selectUser } from "./features/user/userSlice";
 import { auth } from "./firebase";
 
 function Header() {
+  const user = useSelector(selectUser);
   const dispatch = useDispatch();
   const appLogout = () => {
     dispatch(logout());
@@ -33,11 +34,7 @@ function Header() {
         <HeaderItem Icon={BusinessCenterIcon} title="Jobs" />
         <HeaderItem Icon={ChatIcon} title="Messaging" />
         <HeaderItem Icon={NotificationsIcon} title="Notifications" />
-        <HeaderItem
-          onClick={appLogout}
-          avatar="https://images.unsplash.com/photo-1592334873219-42ca023e48ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=861&q=80"
-          title="me"
-        />
+        {user && <HeaderItem onClick={appLogout} profIcon="true" title="me" />}
       </div>
     </div>
   );

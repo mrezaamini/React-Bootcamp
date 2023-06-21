@@ -25,6 +25,8 @@ function Login() {
             photoURL: profile,
           })
           .then(() => {
+            console.log(name);
+            console.log(profile);
             dispatch(
               login({
                 email: userAuth.user.email,
@@ -39,6 +41,19 @@ function Login() {
   };
   const appSignIn = (e) => {
     e.preventDefault();
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((userAuth) => {
+        dispatch(
+          login({
+            email: userAuth.user.email,
+            uid: userAuth.user.uid,
+            displayName: userAuth.user.displayName,
+            photoURL: userAuth.user.photoURL,
+          })
+        );
+      })
+      .catch((error) => alert(error));
   };
   return (
     <div className="loginPage">

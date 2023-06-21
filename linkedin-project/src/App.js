@@ -14,6 +14,8 @@ function App() {
   useEffect(() => {
     auth.onAuthStateChanged((userAuth) => {
       if (userAuth) {
+        console.log("APP");
+        console.log(userAuth);
         dispatch(
           login({
             email: userAuth.email,
