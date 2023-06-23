@@ -31,7 +31,6 @@ function Header() {
         <IconButton>
           <AppsIcon />
         </IconButton>
-
         <IconButton>
           <NotificationsIcon />
         </IconButton>
