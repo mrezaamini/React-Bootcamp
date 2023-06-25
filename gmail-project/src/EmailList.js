@@ -12,6 +12,7 @@ import InboxIcon from "@mui/icons-material/Inbox";
 import Category from "./Category";
 import PeopleIcon from "@mui/icons-material/People";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
+import EmailRow from "./EmailRow";
 
 function EmailList() {
   return (
@@ -53,6 +54,21 @@ function EmailList() {
         <Category Icon={InboxIcon} title="Primary" color="red" selected />
         <Category Icon={PeopleIcon} title="Social" color="#1A73E8" />
         <Category Icon={LocalOfferIcon} title="Promotions" color="green" />
+      </div>
+
+      <div className="emaillist__emailContainer">
+        <EmailRow
+          title="title"
+          subject="test subj"
+          description="test desc"
+          time="10pm"
+        />
+        <EmailRow
+          title="title"
+          subject="test subj"
+          description="test desctest desctest desctest desctest desc test desctest desc"
+          time="10pm"
+        />
       </div>
     </div>
   );
