@@ -13,12 +13,17 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import PersonIcon from "@mui/icons-material/Person";
 import DuoIcon from "@mui/icons-material/Duo";
 import PhoneIcon from "@mui/icons-material/Phone";
+import { useDispatch } from "react-redux";
+import { openCompose } from "./features/mailSlice";
 function Leftbar() {
+  const dispatch = useDispatch();
+
   return (
     <div className="leftbar">
       <Button
         startIcon={<AddIcon fontSize="large" />}
         className="leftbar__compose"
+        onClick={() => dispatch(openCompose())}
       >
         Compose
       </Button>
