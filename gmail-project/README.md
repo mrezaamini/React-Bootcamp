@@ -34,17 +34,9 @@ To get started with the Gmail project, follow the steps below:
 
 ### Installation
 
-1. Clone the repository to your local machine using the following command:
+1. Clone the repository to your local machine using the following command.
 
-```bash
-git clone https://github.com/your-username/gmail-project.git
-```
-
-2. Navigate to the project directory:
-
-```bash
-cd gmail-project
-```
+2. Navigate to the project directory.
 
 3. Install the project dependencies:
 
