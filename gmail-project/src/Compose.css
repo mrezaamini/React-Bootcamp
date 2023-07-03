@@ -54,6 +54,7 @@
 
 .compose__message{
     flex: 1;
+    white-space: normal;
 }
 
 .compose__error{

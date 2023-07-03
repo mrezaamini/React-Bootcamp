@@ -11,6 +11,7 @@ import { selectCompose } from "./features/mailSlice";
 import { selectUser } from "./features/userSlice";
 import Login from "./Login";
 import { auth } from "./firebase";
+import { login } from "./features/userSlice";
 function App() {
   const compose = useSelector(selectCompose);
   const user = useSelector(selectUser);
@@ -18,7 +19,18 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    auth.onAuthStateChanged;
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        dispatch(
+          login({
+            displayName: user.displayName,
+            email: user.email,
+            photoURL: user.photoURL,
+          })
+        );
+      } else {
+      }
+    });
   }, []);
   return (
     <Router>
