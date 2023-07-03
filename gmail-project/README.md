@@ -47,7 +47,7 @@ npm install
 4. Configure Firebase Database:
 
    - Create a Firebase project on the [Firebase Console](https://console.firebase.google.com/).
-   - Retrieve your Firebase configuration information (API keys, etc.) and replace the placeholders in `src/config/firebase.js` with your own.
+   - Retrieve your Firebase configuration information (API keys, etc.) and replace the placeholders in `src/firebase.js` with your own.
    - Enable the Authentication and Realtime Database services in your Firebase project.
 
 5. Start the development server:
