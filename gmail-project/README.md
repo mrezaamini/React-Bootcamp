@@ -2,6 +2,8 @@
 
 This repository contains a Gmail project implemented using React, making it an ideal resource for mastering the fundamentals of React. The project utilizes various popular libraries and technologies, such as React Router, Redux, Material UI, Firebase Database, and Pop-up Authentication.
 
+![Preview](https://github.com/mrezaamini/React-Bootcamp/blob/main/gmail-project/preview.png)
+
 ## Table of Contents
 
 - [Features](#features)
