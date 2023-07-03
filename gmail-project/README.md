@@ -82,9 +82,7 @@ Contributions to the Gmail project are welcome! If you find any bugs, issues, or
 
 ## License
 
-This project is licensed under the [MIT License](
-
-LICENSE). You are free to use, modify, and distribute this code as per the terms of the license.
+This project is licensed under the MIT License. You are free to use, modify, and distribute this code as per the terms of the license.
 
 ## Acknowledgments
 
