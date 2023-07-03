@@ -5,6 +5,8 @@ import { Button } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { closeCompose } from "./features/mailSlice";
+import { db } from "./firebase";
+import firebase from "firebase/compat/app";
 
 function Compose() {
   const {
@@ -16,6 +18,14 @@ function Compose() {
 
   const onSubmit = (data) => {
     console.log(data);
+    db.collection("emails").add({
+      to: data.to,
+      subject: data.subject,
+      message: data.message,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    });
+
+    dispatch(closeCompose());
   };
 
   const dispatch = useDispatch();

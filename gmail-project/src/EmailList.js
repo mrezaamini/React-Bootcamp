@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./EmailList.css";
-import { Checkbox, IconButton } from "@mui/material";
+import { Checkbox, IconButton, toggleButtonGroupClasses } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import RedoIcon from "@mui/icons-material/Redo";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
@@ -13,8 +13,27 @@ import Category from "./Category";
 import PeopleIcon from "@mui/icons-material/People";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import EmailRow from "./EmailRow";
+import { db } from "./firebase";
 
 function EmailList() {
+  const [emailData, setEmailData] = useState([]);
+
+  useEffect(() => {
+    db.collection("emails")
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) => {
+        const updatedTroop = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }));
+        setEmailData(updatedTroop);
+      });
+  }, []);
+
+  useEffect(() => {
+    console.log("here");
+    console.log(emailData);
+  }, [emailData]);
   return (
     <div className="emaillist">
       <div className="emaillist__options">
@@ -57,18 +76,16 @@ function EmailList() {
       </div>
 
       <div className="emaillist__emailContainer">
-        <EmailRow
-          title="title"
-          subject="test subj"
-          description="test desc"
-          time="10pm"
-        />
-        <EmailRow
-          title="title"
-          subject="test subj"
-          description="test desctest desctest desctest desctest desc test desctest desc"
-          time="10pm"
-        />
+        {emailData.map(({ id, data: { to, subject, message, timestamp } }) => (
+          <EmailRow
+            id={id}
+            key={id}
+            title={to}
+            subject={subject}
+            description={message}
+            time={new Date(timestamp?.seconds * 1000).toUTCString()}
+          />
+        ))}
       </div>
     </div>
   );
