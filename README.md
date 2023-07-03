@@ -16,7 +16,7 @@ To get started with the projects in this repository, follow these steps:
 1. Clone the repository to your local machine using the following command:
 
 ```shell
-git clone https://github.com/mrezaamini/react-practice.git
+git clone https://github.com/mrezaamini/React-Bootcamp.git
 ```
 
 2. Install the required dependencies for each project. Instructions for installation can be found in each project's directory.
@@ -28,6 +28,7 @@ git clone https://github.com/mrezaamini/react-practice.git
 The repository currently includes the following projects:
 
 1. **Project 1:** [LinkedIn](./linkedin-project) - Implementation of LinkedIn website.
+2. **Project 2:** [Gmail](./gmail-project) - Implementation of Gmail website with popular functionalities.
 
 Feel free to explore these projects or modify them to further enhance your React.js skills.
 
