@@ -1,8 +1,20 @@
 import React from "react";
 import { styled } from "styled-components";
+import { db } from "./firebase";
+import { useCollection } from "react-firebase-hooks/firestore";
 
 function SideBarRow({ Icon, addChannelBool, title }) {
-  const addChannel = () => {};
+  const [channels, loading, error] = useCollection(db.collection("channels"));
+  console.log(channels);
+
+  const addChannel = () => {
+    const name = prompt("Enter Channel Name");
+    if (name) {
+      db.collection("channels").add({
+        name: name,
+      });
+    }
+  };
   const selectChannel = () => {};
 
   return (
