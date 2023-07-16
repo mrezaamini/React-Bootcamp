@@ -1,12 +1,8 @@
 import React from "react";
 import { styled } from "styled-components";
 import { db } from "./firebase";
-import { useCollection } from "react-firebase-hooks/firestore";
 
-function SideBarRow({ Icon, addChannelBool, title }) {
-  const [channels, loading, error] = useCollection(db.collection("channels"));
-  console.log(channels);
-
+function SideBarRow({ Icon, addChannelBool, title, id }) {
   const addChannel = () => {
     const name = prompt("Enter Channel Name");
     if (name) {
@@ -54,4 +50,7 @@ const SideBarRowContainer = styled.div`
   }
 `;
 
-const SideBarRowChannel = styled.div``;
+const SideBarRowChannel = styled.h3`
+  padding: 10px 0;
+  font-weight: 300;
+`;
