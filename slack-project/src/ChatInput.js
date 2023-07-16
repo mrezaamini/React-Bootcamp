@@ -1,11 +1,13 @@
 import { Button } from "@mui/material";
 import React, { useRef } from "react";
 import styled from "styled-components";
-import { db } from "./firebase";
+import { auth, db } from "./firebase";
 import firebase from "firebase/compat/app";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 function ChatInput({ name, channelNum, chatRefrence }) {
   const inputRefrence = useRef(null);
+  const [user] = useAuthState(auth);
   const sendMessage = (e) => {
     e.preventDefault();
     if (!channelNum) {
@@ -14,9 +16,8 @@ function ChatInput({ name, channelNum, chatRefrence }) {
     db.collection("channels").doc(channelNum).collection("messages").add({
       message: inputRefrence.current.value,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      user: "Alexander Turner",
-      userImage:
-        "https://media.istockphoto.com/id/1338134336/photo/headshot-portrait-african-30s-man-smile-look-at-camera.jpg?s=170667a&w=0&k=20&c=wGndZPrloollsXEV3d8i9CwGZfn0ewOFHjBu1AK3pRI=",
+      user: user.displayName,
+      userImage: user.photoURL,
     });
 
     chatRefrence.current.scrollIntoView({
