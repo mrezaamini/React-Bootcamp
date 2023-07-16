@@ -5,6 +5,7 @@ import Main from "./Main";
 import Header from "./Header";
 import { styled } from "styled-components";
 import SideBar from "./SideBar";
+import Chat from "./Chat";
 
 function App() {
   return (
@@ -14,8 +15,7 @@ function App() {
         <Body>
           <SideBar />
           <Routes>
-            {/* <Route path="/" exact Component={Main} /> */}
-            {/* <Route path="/" Component={<h1>about</h1>} /> */}
+            <Route path="/" exact Component={Chat} />
           </Routes>
         </Body>
       </Router>
