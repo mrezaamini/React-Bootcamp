@@ -9,7 +9,7 @@ export const captureSlice = createSlice({
   initialState,
   reducers: {
     setCapturedImage: (state, action) => {
-      state.capturedImage += action.payload;
+      state.capturedImage = action.payload;
     },
     resetCapturedImage: (state) => {
       state.capturedImage = null;
