@@ -1,5 +1,6 @@
 import { useCallback, useRef, useState } from "react";
 import Webcam from "react-webcam";
+import "./WebcamCapture.css";
 import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";
 import { useDispatch } from "react-redux";
 import { setCapturedImage } from "./features/captureSlice";
