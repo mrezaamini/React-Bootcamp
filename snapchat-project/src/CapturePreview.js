@@ -15,6 +15,9 @@ import AttachFileIcon from "@mui/icons-material/AttachFile";
 import CropIcon from "@mui/icons-material/Crop";
 import TimerIcon from "@mui/icons-material/Timer";
 import SendIcon from "@mui/icons-material/Send";
+import { v4 as uuid } from "uuid";
+import { db, storage } from "./firebase";
+import firebase from "firebase/compat/app";
 
 function CapturePreview() {
   const capturedImage = useSelector(selectCapturedImage);
@@ -28,6 +31,35 @@ function CapturePreview() {
       navigate("/");
     }
   }, [capturedImage, navigate]);
+  const sendSnap = () => {
+    const id = uuid();
+    console.log(uuid);
+    const uploadTask = storage
+      .ref(`posts/${id}`)
+      .putString(capturedImage, "data_url");
+    uploadTask.on(
+      "state_changed",
+      null,
+      (error) => {
+        console.log(error);
+      },
+      () => {
+        storage
+          .ref("posts")
+          .child(id)
+          .getDownloadURL()
+          .then((url) => {
+            db.collection("posts").add({
+              iamgeurl: url,
+              username: "Mrezaamini",
+              read: false,
+              timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            });
+            navigate("/messages");
+          });
+      }
+    );
+  };
   return (
     <div className="prv">
       <CloseIcon className="prv__close" onClick={closePrv} />
@@ -41,7 +73,7 @@ function CapturePreview() {
         <TimerIcon />
       </div>
       <img src={capturedImage} alt="" />
-      <div className="prv__footer">
+      <div onClick={sendSnap} className="prv__footer">
         <h2>Send Now</h2>
         <SendIcon className="prv__send" />
       </div>
