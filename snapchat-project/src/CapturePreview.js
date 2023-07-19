@@ -50,7 +50,7 @@ function CapturePreview() {
           .getDownloadURL()
           .then((url) => {
             db.collection("posts").add({
-              iamgeurl: url,
+              imageurl: url,
               username: "Mrezaamini",
               read: false,
               timestamp: firebase.firestore.FieldValue.serverTimestamp(),

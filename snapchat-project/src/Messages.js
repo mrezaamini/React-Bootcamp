@@ -19,6 +19,7 @@ function Messages() {
           }))
         );
       });
+    console.log(posts);
   }, []);
   return (
     <div className="messages">
@@ -36,15 +37,18 @@ function Messages() {
             id,
             data: { profilePic, username, timestamp, imageurl, read },
           }) => {
-            <Chat
-              key={id}
-              id={id}
-              username={username}
-              timestamp={timestamp}
-              imageurl={imageurl}
-              read={read}
-              profilePic={profilePic}
-            />;
+            console.log(imageurl);
+            return (
+              <Chat
+                key={id}
+                id={id}
+                username={username}
+                timestamp={timestamp}
+                imageurl={imageurl}
+                read={read}
+                profilePic={profilePic}
+              />
+            );
           }
         )}
       </div>

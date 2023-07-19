@@ -4,6 +4,7 @@ import WebcamCapture from "./WebcamCapture";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CapturePreview from "./CapturePreview";
 import Messages from "./Messages";
+import MessageView from "./MessageView";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
             <Route path="/" exact Component={WebcamCapture} />
             <Route path="/capturePrv" Component={CapturePreview} />
             <Route path="/messages" Component={Messages} />
+            <Route path="/messages/chat" Component={MessageView} />
           </Routes>
         </div>
       </Router>

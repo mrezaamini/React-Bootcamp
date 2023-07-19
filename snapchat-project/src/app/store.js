@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "../features/counterSlice";
+import snapReducer from "../features/snapSlice";
 import captureReducer from "../features/captureSlice";
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    snap: snapReducer,
     capture: captureReducer,
   },
 });
