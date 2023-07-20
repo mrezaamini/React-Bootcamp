@@ -5,6 +5,7 @@
 
 }
 
+
 .messages__header {
     display: flex;
     justify-content: space-between;
@@ -56,4 +57,33 @@
 
 .messages__posts::-webkit-scrollbar {
     display: none;
+}
+
+
+.messages__button {
+    position: absolute;
+    background-color: white;
+    border-radius: 200px;
+    color: gray;
+    font-size: 40px !important;
+    cursor: pointer;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.messages__button:hover{
+    opacity: 0.7;
+}
+
+
+.messages__searchIcon{
+    color: white;
+    font-size: 13px !important;
+}
+
+.messages__chatIcon{
+    color: white;
+    font-size: 13px !important;
 }

@@ -18,8 +18,10 @@ import SendIcon from "@mui/icons-material/Send";
 import { v4 as uuid } from "uuid";
 import { db, storage } from "./firebase";
 import firebase from "firebase/compat/app";
+import { selectUser } from "./features/snapSlice";
 
 function CapturePreview() {
+  const user = useSelector(selectUser);
   const capturedImage = useSelector(selectCapturedImage);
   const dispatch = useDispatch();
   const closePrv = () => {
@@ -51,7 +53,8 @@ function CapturePreview() {
           .then((url) => {
             db.collection("posts").add({
               imageurl: url,
-              username: "Mrezaamini",
+              username: user.username,
+              profilePic: user.profilePic,
               read: false,
               timestamp: firebase.firestore.FieldValue.serverTimestamp(),
             });
