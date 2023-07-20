@@ -5,7 +5,7 @@
 .prv__close{
     position: absolute;
     top: 0;
-    margin: 5px;
+    margin: 10px;
     cursor: pointer;
     color: white;
 }
@@ -16,7 +16,7 @@
     right: 0;
     display: flex;
     flex-direction: column;
-    margin: 5px;
+    margin: 10px;
 
 }
 
@@ -28,8 +28,8 @@
 
 .prv__footer{
     position: absolute;
-    bottom: 0;
-    right: -25px;
+    bottom: 10px;
+    right: -20px;
     transform: translate(-50%, -50%);
     background-color:yellow;
     color: black;

@@ -38,14 +38,18 @@ function App() {
           <Login />
         ) : (
           <div className="body">
+            <img
+              className="frame"
+              src="https://www.transparentpng.com/thumb/-iphone-x/8Sr3af-apple-iphone-transparent-mobile-search-png.png"
+              alt=""
+            />
             <div className="app__background">
-              {/* <Routes>
+              <Routes>
                 <Route path="/" exact Component={WebcamCapture} />
                 <Route path="/capturePrv" Component={CapturePreview} />
                 <Route path="/messages" Component={Messages} />
                 <Route path="/messages/chat" Component={MessageView} />
-              </Routes> */}
-              <h1>hi</h1>
+              </Routes>
             </div>
           </div>
         )}

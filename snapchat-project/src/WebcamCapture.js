@@ -7,7 +7,7 @@ import { setCapturedImage } from "./features/captureSlice";
 import { useNavigate } from "react-router-dom";
 const videoConstraints = {
   width: 250,
-  height: 400,
+  height: 550,
   facingMode: "user",
 };
 

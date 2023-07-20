@@ -9,10 +9,23 @@
 
 .app__background{
   background-color: white;
-  height: 400px;
+  height: 550px;
+  width: 250px;
 }
 
-.body {
-  background: url();
+/* .body {
+  background: url('https://www.transparentpng.com/thumb/-iphone-x/8Sr3af-apple-iphone-transparent-mobile-search-png.png') no-repeat center;
 
+  padding: 150px;
+  background-size: contain;
+} */
+
+
+.frame {
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  top: 50%;
+  z-index: 100;
+  pointer-events: none;
 }
