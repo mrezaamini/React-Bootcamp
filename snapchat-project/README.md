@@ -1,4 +1,4 @@
-# Snapchat Clone Project
+# Snapchat Project
 
 This repository contains a Snapchat clone project implemented using React. The project includes key functionalities of Snapchat, allowing users to send and receive self-destructing photos and videos. It leverages various libraries and technologies, including React Router, Material UI, Redux, React UUID, React Time Ago, React Webcam, Firebase Firestore, Firebase Storage, and Google Authentication.
 
