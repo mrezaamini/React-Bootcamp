@@ -29,7 +29,8 @@ The repository currently includes the following projects:
 
 1. **Project 1:** [LinkedIn](./linkedin-project) - Implementation of LinkedIn website.
 2. **Project 2:** [Gmail](./gmail-project) - Implementation of Gmail with popular functionalities.
-3. **Project 2:** [Slack](./slack-project) - Implementation of Slack the collaboration tool.
+3. **Project 3:** [Slack](./slack-project) - Implementation of Slack the collaboration tool.
+4. **Project 4:** [Slack](./snapchat-project) - Implementation of Snapchat with key functionalities.
 
 Feel free to explore these projects or modify them to further enhance your React.js skills.
 
